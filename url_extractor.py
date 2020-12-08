@@ -4,14 +4,14 @@ import re
 from selenium import webdriver
 import time
 
-URL = "https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fwww.google.com%2Fcollections%2Fs%2Flist%2FUxLbhnEFTYylpfNwzYqSiA%2FtWCgSg5YIMY%3Fq%3DAI-ML%26sa%3DX%26ved%3D2ahUKEwjFkMShnbvtAhVDVmMKHYaPAlAQ4r8DKAB6BAgAEAc&sacu=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+URL = "https://www.google.com/collections/s/list/UxLbhnEFTYylpfNwzYqSiA/tWCgSg5YIMY?q=AI-ML&sa=X&ved=2ahUKEwjFkMShnbvtAhVDVmMKHYaPAlAQ4r8DKAB6BAgAEAc"
 
 
 def driver(browser):
     if browser == 'firefox':
         return webdriver.Firefox()
     if browser == 'chrome':
-        return webdriver.Chrome(executable_path='C:/Users/Shreyas/Documents/misc/msedgedriver.exe''chromedriver.exe')
+        return webdriver.Chrome(executable_path='C:/Users/Shreyas/Documents/misc/chromedriver.exe')
     if browser == 'opera':
         options = webdriver.ChromeOptions()
         options.binary_location = "C:\\Program Files\\Opera\\launcher.exe"
@@ -27,18 +27,22 @@ def driver(browser):
 
 def dynamic_web_scrape(url):
     dr = driver('chrome')
+
+    dr.get('https://stackoverflow.com')
+    # dr.find_element_by_name('identifier').send_keys('peeyush.rai@gmail.com')
+    dr.find_element_by_xpath('/html/body/header/div/ol[2]/li[2]/a[1]').click()
+    time.sleep(3)
+    dr.implicitly_wait(5)
+    dr.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click()
+    time.sleep(3)
+    dr.find_element_by_name('identifier').send_keys('shreyasrai23@gmail.com')
+    dr.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
+    dr.find_element_by_name('password').send_keys('')
+    time.sleep(3)
+    dr.find_element_by_xpath('//*[@id="passwordNext"]/div/button/div[2]').click()
+    time.sleep(3)
     dr.get(url)
-    time.sleep(5)
-    username = dr.find_element_by_id("identifierId")
-    username.send_keys("shreyasrai23@gmail.com")
-    username.send_keys(u'\ue007')
-    # dr.find_element_by_name("identifierNext").click()
-    password = dr.find_element_by_id("password")
-    password.send_keys("v1N$m0ke_785anji222")
-    dr.find_element_by_name("passwordNext").click()
-    time.sleep(5)
-    html = dr.page_source
-    return html
+    return dr.page_source
 
 
 def static_page_extract(html_source):
