@@ -2,9 +2,6 @@ from bs4 import BeautifulSoup, SoupStrainer
 from selenium import webdriver
 import time
 
-URL = "https://www.google.com/collections/s/list/UxLbhnEFTYylpfNwzYqSiA/" \
-      "tWCgSg5YIMY?q=AI-ML&sa=X&ved=2ahUKEwjFkMShnbvtAhVDVmMKHYaPAlAQ4r8DKAB6BAgAEAc"
-
 
 def driver(browser):
     if browser == 'firefox':
@@ -24,22 +21,29 @@ def driver(browser):
     raise Exception("The browser is not supported on webdriver")
 
 
-def dynamic_web_scrape(url):
-    dr = driver('chrome')
-    dr.get('https://stackoverflow.com')
-    dr.find_element_by_xpath('/html/body/header/div/ol[2]/li[2]/a[1]').click()
-    time.sleep(1)
-    dr.implicitly_wait(5)
-    dr.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click()
-    time.sleep(1)
-    dr.find_element_by_name('identifier').send_keys('shreyasrai23@gmail.com')
-    dr.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
-    dr.find_element_by_name('password').send_keys('')  # Insert password here
-    time.sleep(1)
-    dr.find_element_by_xpath('//*[@id="passwordNext"]/div/button/div[2]').click()
-    time.sleep(1)
-    dr.get(url)
-    return dr.page_source
+class UrlExtractor:
+
+    _URL = ""
+
+    def __init__(self, url):
+        _URL = url
+
+    def dynamic_web_scrape(self):
+        dr = driver('chrome')
+        dr.get('https://stackoverflow.com')
+        dr.find_element_by_xpath('/html/body/header/div/ol[2]/li[2]/a[1]').click()
+        time.sleep(1)
+        dr.implicitly_wait(5)
+        dr.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click()
+        time.sleep(1)
+        dr.find_element_by_name('identifier').send_keys('shreyasrai23@gmail.com')
+        dr.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
+        dr.find_element_by_name('password').send_keys('')  # Insert password here
+        time.sleep(1)
+        dr.find_element_by_xpath('//*[@id="passwordNext"]/div/button/div[2]').click()
+        time.sleep(1)
+        dr.get(self._URL)
+        return dr.page_source
 
 
 def remove_alphanumeric(string):
@@ -65,7 +69,10 @@ def write_to_file(ls):
 
 
 def main():
-    source = dynamic_web_scrape(URL)
+    url_extractor = UrlExtractor("https://www.google.com/collections/s/list/UxLbhnEFTYylpfNwzYqSiA/"
+                                 "tWCgSg5YIMY?q=AI-ML&sa=X&ved=2ahUKEwjFkMShnbvtAhVDVmMKHYaPAlAQ4r8DKAB6BAgAEAc")
+
+    source = url_extractor.dynamic_web_scrape()
     static_page_extract(source)
     url_ls = static_page_extract(source)
     write_to_file(url_ls)
