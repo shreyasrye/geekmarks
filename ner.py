@@ -17,7 +17,6 @@ def write_train_data(read_file, write_file):
                     publisher = value
         else:
             for key, value in dictionary.items():
-                # print('KEY:{}\nVALUE:{}'.format(key, value))
                 if key == '@graph':
                     for inner_dict in value:
                         for x, y in inner_dict.items():
@@ -30,12 +29,16 @@ def write_train_data(read_file, write_file):
                                     publisher = y
         if text == "" and publisher == "":
             continue
-        output = f'{{"text":{text},"meta":{publisher}}}'
+        output = {
+                "text": text,
+                "meta": {
+                    "source": publisher
+                    }
+            }
         output_file = open(write_file, 'a', encoding='utf-8')
-        output_file.write(output)
+        output_file.write(json.dumps(output))
         output_file.write("\n")
         output_file.close()
-        # print(output)
 
 
 if __name__ == '__main__':
