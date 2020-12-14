@@ -6,7 +6,7 @@ import json
 
 
 def get_urls(filename):
-    url_ls= []
+    url_ls = []
     with open(filename, "r") as file:
         for line in file:
             stripped_line = line.strip()
@@ -53,7 +53,6 @@ def write_metadata(url_ls):
             meta_json = json.dumps(scrape(url))
             if meta_json == '[]':
                 continue
-            file.write("\n")
 
 
 def main():
