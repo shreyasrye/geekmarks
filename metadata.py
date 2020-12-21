@@ -11,6 +11,8 @@ def get_urls(filename):
         for line in file:
             stripped_line = line.strip()
             url_ls.append(stripped_line)
+    if len(url_ls) != 0:
+        print("successfully loaded urls")
     return url_ls
 
 
@@ -47,17 +49,18 @@ def get_metadata(html: bytes, url: str):
     return metadata
 
 
-def write_metadata(url_ls):
-    with open(r"metadata.txt", "w") as file:
+def write_metadata(url_ls, output_file):
+    with open(output_file, "w") as file:
         for url in url_ls:
             meta_json = json.dumps(scrape(url))
             if meta_json == '[]':
                 continue
-
+            file.write(meta_json)
+            file.write("\n")
 
 def main():
-    url_ls = get_urls(r'urls.txt')
-    write_metadata(url_ls)
+    url_ls = get_urls('urls/urls_2.txt')
+    write_metadata(url_ls, "metadata_2.txt")
 
 
 if __name__ == '__main__':
