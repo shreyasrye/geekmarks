@@ -26,22 +26,22 @@ class UrlExtractor:
     _URL = ""
 
     def __init__(self, url):
-        _URL = url
+        self._URL = url
 
     def dynamic_web_scrape(self):
         dr = driver('chrome')
         dr.get('https://stackoverflow.com')
         dr.find_element_by_xpath('/html/body/header/div/ol[2]/li[2]/a[1]').click()
-        time.sleep(1)
+        time.sleep(3)
         dr.implicitly_wait(5)
         dr.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click()
-        time.sleep(1)
+        time.sleep(3)
         dr.find_element_by_name('identifier').send_keys('shreyasrai23@gmail.com')
         dr.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
         dr.find_element_by_name('password').send_keys('')  # Insert password here
-        time.sleep(1)
+        time.sleep(3)
         dr.find_element_by_xpath('//*[@id="passwordNext"]/div/button/div[2]').click()
-        time.sleep(1)
+        time.sleep(3)
         dr.get(self._URL)
         return dr.page_source
 
@@ -60,24 +60,22 @@ def static_page_extract(html_source):
     return url_ls
 
 
-def write_to_file(ls):
+def write_to_file(ls, file_name):
     """ Write the extracted text into a file for annotating"""
-    file = open(r"urls.txt", "w")
+    file = open(file_name, "w")
     for i in range(len(ls)):
         file.write(ls[i] + '\n')
     file.close()
 
 
 def main():
-    url_extractor = UrlExtractor("https://www.google.com/collections/s/list/UxLbhnEFTYylpfNwzYqSiA/"
-                                 "tWCgSg5YIMY?q=AI-ML&sa=X&ved=2ahUKEwjFkMShnbvtAhVDVmMKHYaPAlAQ4r8DKAB6BAgAEAc")
+    url_extractor = UrlExtractor("https://www.google.com/collections/s/list/SlKy8Mg9Rsua9CKAbIoM8Q/F90Pjv8sIFY?q=Programming&sa=X&ved=0CAcQ4r8DKABqFwoTCJiIu5eH1u0CFQAAAAAdAAAAABAC&authuser=0")
 
     source = url_extractor.dynamic_web_scrape()
     static_page_extract(source)
     url_ls = static_page_extract(source)
-    write_to_file(url_ls)
+    write_to_file(url_ls, "urls_2.txt")
 
 
 if __name__ == '__main__':
     main()
-
