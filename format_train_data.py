@@ -11,7 +11,7 @@ def write_train_data(read_file, write_file):
             if key == 'publisher':
                 try:
                     publisher = value['url']
-                except KeyError:
+                except (KeyError, TypeError):
                     publisher = value
         else:
             for key, value in dictionary.items():
@@ -67,7 +67,9 @@ def prodigy2spacy(prodigy_file, empty_TRAIN_DATA: list):
 
 
 if __name__ == "__main__":
-    temp = []
-    TRAIN_DATA = prodigy2spacy("annotated_data.jsonl", temp)
-    for i in TRAIN_DATA:
-        print(i)
+    write_train_data("metadata/metadata_2.txt", "train_data/train_data_2.jsonl")
+    
+    # temp = []
+    # TRAIN_DATA = prodigy2spacy("annotated_data.jsonl", temp)
+    # for i in TRAIN_DATA:
+    #     print(i)
