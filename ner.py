@@ -4,29 +4,14 @@ import random
 import warnings
 from pathlib import Path
 from spacy.util import minibatch, compounding
-from format_train_data import prodigy2spacy
+from format_train_data import gold2spacy
 import spacy
 from spacy.gold import GoldParse
 from spacy.scorer import Scorer
 
-# example run
-
-examples = [
-    ('Who is Shaka Khan?',
-     [(7, 17, 'PERSON')]),
-    ('I like London and Berlin.',
-     [(7, 13, 'LOC'), (18, 24, 'LOC')])
-]
-
-
-def get_file(filename):
-    with open(filename) as file:
-        data = json.load(file)
-        return data
-
 
 TRAIN_DATA = []
-TRAIN_DATA = prodigy2spacy("train_data/annotated_data_2.jsonl", TRAIN_DATA)
+TRAIN_DATA = gold2spacy("train_data/annotated_data_2.jsonl", TRAIN_DATA)
 
 
 def train(model=None, output_dir=None, n_iter=100):
@@ -82,21 +67,17 @@ def train(model=None, output_dir=None, n_iter=100):
 
 
 TEST_DATA = []
-TEST_DATA = prodigy2spacy("evaluation/evaluation_data.jsonl", TEST_DATA)
+TEST_DATA = gold2spacy("evaluation/evaluation_data.jsonl", TEST_DATA)
 
 
-def evaluate(ner_model):
+def evaluate(ner_model, test_data):
     scorer = Scorer()
-    for input_, annot in TEST_DATA:
-        
-        # Gold standard
-        doc_gold_text = ner_model.make_doc(input_)
-        gold = GoldParse(doc_gold_text, entities=annot)
-        
-        pred_value = ner_model(input_)
+    for text, ent_dc in test_data:
+        doc_gold_text = ner_model.make_doc(text)
+        gold = GoldParse(doc_gold_text, entities=ent_dc['entities'])
+        pred_value = ner_model(text)
         scorer.score(pred_value, gold)
     return scorer.scores
-
 
 if __name__ == '__main__':
     # First time (new model)
@@ -106,9 +87,5 @@ if __name__ == '__main__':
     # train("./geekmarks-ner-model")
     
     # Testing model
-    # nlp = spacy.load("./geekmarks-ner-model")
-    # print(evaluate(nlp))
-
-    print(examples)
-    print("__________________________")
-    print(TEST_DATA)
+    nlp = spacy.load("./geekmarks-ner-model")
+    print(evaluate(nlp, TEST_DATA))
