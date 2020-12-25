@@ -39,7 +39,7 @@ def write_train_data(read_file, write_file):
         output_file.close()
 
 
-def prodigy2spacy(prodigy_file, empty_TRAIN_DATA: list):
+def gold2spacy(prodigy_file, empty_TRAIN_DATA: list): # , variation: str
     for line in open(prodigy_file, 'r'):
         dictionary = json.loads(line)
         text, start_char, end_char, ent = "", None, None, ""
@@ -65,11 +65,10 @@ def prodigy2spacy(prodigy_file, empty_TRAIN_DATA: list):
 
 
 
-
 if __name__ == "__main__":
-    write_train_data("metadata/metadata_2.txt", "train_data/train_data_2.jsonl")
+    # write_train_data("metadata/metadata_2.txt", "train_data/train_data_2.jsonl")
     
-    # temp = []
-    # TRAIN_DATA = prodigy2spacy("annotated_data.jsonl", temp)
-    # for i in TRAIN_DATA:
-    #     print(i)
+    temp = []
+    TRAIN_DATA = gold2spacy("train_data/annotated_data_2.jsonl", temp, "eval")
+    for i in TRAIN_DATA:
+        print(i)
