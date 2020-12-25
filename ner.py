@@ -3,10 +3,20 @@ import plac
 import random
 import warnings
 from pathlib import Path
-import spacy
 from spacy.util import minibatch, compounding
 from format_train_data import prodigy2spacy
+import spacy
+from spacy.gold import GoldParse
 from spacy.scorer import Scorer
+
+# example run
+
+examples = [
+    ('Who is Shaka Khan?',
+     [(7, 17, 'PERSON')]),
+    ('I like London and Berlin.',
+     [(7, 13, 'LOC'), (18, 24, 'LOC')])
+]
 
 
 def get_file(filename):
@@ -15,10 +25,8 @@ def get_file(filename):
         return data
 
 
-# First time (new model)
 TRAIN_DATA = []
-TRAIN_DATA = prodigy2spacy("annotated_data.jsonl", TRAIN_DATA)
-
+TRAIN_DATA = prodigy2spacy("train_data/annotated_data_2.jsonl", TRAIN_DATA)
 
 
 def train(model=None, output_dir=None, n_iter=100):
@@ -73,22 +81,34 @@ def train(model=None, output_dir=None, n_iter=100):
         print("Saved model to", output_dir)
 
 
-def test(model=None, n_iter=100):
-    print("Loading from")
-    nlp = spacy.load(model)
+TEST_DATA = []
+TEST_DATA = prodigy2spacy("evaluation/evaluation_data.jsonl", TEST_DATA)
 
-    test = "Artificial intelligence (AI) vs. natural language processing (NLP): What are the differences?"
-    doc = nlp(test)
 
-    for ent in doc.ents:
-        print("Text: ", ent.text, " Label: ", ent.label_)
-    # sc = Scorer()
-    # sc.score(doc, gold)
-    
+def evaluate(ner_model):
+    scorer = Scorer()
+    for input_, annot in TEST_DATA:
+        
+        # Gold standard
+        doc_gold_text = ner_model.make_doc(input_)
+        gold = GoldParse(doc_gold_text, entities=annot)
+        
+        pred_value = ner_model(input_)
+        scorer.score(pred_value, gold)
+    return scorer.scores
+
 
 if __name__ == '__main__':
     # First time (new model)
-    # train(None, "./geekmars-ner")
+    # train(None, "./geekmars-ner-model")
+
+    # Reloading model
+    # train("./geekmarks-ner-model")
     
     # Testing model
-    test("geekmarks-ner")
+    # nlp = spacy.load("./geekmarks-ner-model")
+    # print(evaluate(nlp))
+
+    print(examples)
+    print("__________________________")
+    print(TEST_DATA)
