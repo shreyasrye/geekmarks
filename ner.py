@@ -79,6 +79,21 @@ def evaluate(ner_model, test_data):
         scorer.score(pred_value, gold)
     return scorer.scores
 
+
+def pretty_print_eval(scores: dict):
+    print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ EVALUATION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    for key, val in scores.items():
+        if key == 'ents_per_type':
+            print(f"{key} (Scores per entity label):")
+            for k, v in val.items():
+                print(f"\n    {k}")
+                for x,y in v.items():
+                    print(f"{x:>8} --> {y}")
+            print()
+        else:
+            print(f"{key:16} --> {val}")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
 if __name__ == '__main__':
     # First time (new model)
     # train(None, "./geekmars-ner-model")
@@ -88,4 +103,5 @@ if __name__ == '__main__':
     
     # Testing model
     nlp = spacy.load("./geekmarks-ner-model")
-    print(evaluate(nlp, TEST_DATA))
+    scores = evaluate(nlp, TEST_DATA)
+    pretty_print_eval(scores)
