@@ -1,21 +1,20 @@
 from bs4 import BeautifulSoup, SoupStrainer
 from selenium import webdriver
 import time
+from config import cfd
 
 
 def driver(browser):
     if browser == 'firefox':
         return webdriver.Firefox()
     if browser == 'chrome':
-        return webdriver.Chrome(executable_path='C:/Users/Shreyas/Documents/misc/chromedriver.exe')
+        return webdriver.Chrome(executable_path=cfd['chromedriverpath'])
     if browser == 'opera':
-        options = webdriver.ChromeOptions()
-        options.binary_location = "C:\\Program Files\\Opera\\launcher.exe"
-        return webdriver.Opera(executable_path='operadriver.exe')
+        return webdriver.Opera(executable_path=cfd['operadriverpath'])
     if browser == 'ie':
         return webdriver.Ie()
     if browser == 'edge':
-        return webdriver.Edge(executable_path='C:/Users/Shreyas/Documents/misc/msedgedriver.exe')
+        return webdriver.Edge(executable_path=cfd['edgedriverpath'])
     if browser == 'phantom':
         return webdriver.PhantomJS()
     raise Exception("The browser is not supported on webdriver")
@@ -30,15 +29,15 @@ class UrlExtractor:
 
     def dynamic_web_scrape(self):
         dr = driver('chrome')
-        dr.get('https://stackoverflow.com')
+        dr.get('https://stackoverflow.com') # Can be any website that uses Google's login 
         dr.find_element_by_xpath('/html/body/header/div/ol[2]/li[2]/a[1]').click()
         time.sleep(3)
         dr.implicitly_wait(5)
         dr.find_element_by_xpath('//*[@id="openid-buttons"]/button[1]').click()
         time.sleep(3)
-        dr.find_element_by_name('identifier').send_keys('shreyasrai23@gmail.com')
+        dr.find_element_by_name('identifier').send_keys(cfd['google_usrnm']) # Insert username here
         dr.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
-        dr.find_element_by_name('password').send_keys('')  # Insert password here
+        dr.find_element_by_name('password').send_keys(cfd['google_pass'])  # Insert password here
         time.sleep(3)
         dr.find_element_by_xpath('//*[@id="passwordNext"]/div/button/div[2]').click()
         time.sleep(3)
@@ -69,7 +68,8 @@ def write_to_file(ls, file_name):
 
 
 def main():
-    url_extractor = UrlExtractor("https://www.google.com/collections/s/list/SlKy8Mg9Rsua9CKAbIoM8Q/F90Pjv8sIFY?q=Programming&sa=X&ved=0CAcQ4r8DKABqFwoTCJiIu5eH1u0CFQAAAAAdAAAAABAC&authuser=0")
+    url_extractor = UrlExtractor("""https://www.google.com/collections/s/list/SlKy8Mg9Rsua9CKAbIoM8Q/F90Pjv8sIFY?q
+    =Programming&sa=X&ved=0CAcQ4r8DKABqFwoTCJiIu5eH1u0CFQAAAAAdAAAAABAC&authuser=0""") # Google collection from which initial URLS are extracted
 
     source = url_extractor.dynamic_web_scrape()
     static_page_extract(source)
