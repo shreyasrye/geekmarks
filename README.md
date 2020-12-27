@@ -47,7 +47,11 @@ $ prodigy ner.correct geekmarks_anno_dataset geekmarks-ner-model ./train_data.js
 For an even faster approach, you can use the *Binary with active learning and a model in the loop* recipe, `ner.teach`. This leaves most of the annotation to the model, 
 and you are only consulted to accept or reject labels that the model is unsure about tagging.
 
-When using a brand new or blank model, annotating is slightly more tedious. 
+When using a brand new or **blank** model, annotating is slightly more tedious. 
+
+Prodigy has two recipes that can be used for annotation with a new model:
+- Fully manual --> Raw data is annotated by you by highlighting and clicking on text; the `ner.manual` command is used to do this.
+- Manual with suggestions from patterns --> 
 
 ## Training and Evaluation
 
