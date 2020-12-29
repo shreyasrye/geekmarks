@@ -58,9 +58,48 @@ def write_metadata(url_ls, output_file):
             file.write(meta_json)
             file.write("\n")
 
+def filter4Prodigy(read_file, write_file):
+    """ Filter the metadata so only the headlines & urls are used for annotating. """
+    for line in open(read_file, 'r'):
+        dictionary = json.loads(line)
+        text, publisher = "", ""
+        for key, value in dictionary.items():
+            if key == 'headline':
+                text = value
+            if key == 'publisher':
+                try:
+                    publisher = value['url']
+                except (KeyError, TypeError):
+                    publisher = value
+        else:
+            for key, value in dictionary.items():
+                if key == '@graph':
+                    for inner_dict in value:
+                        for x, y in inner_dict.items():
+                            if x == 'headline':
+                                text = y
+                            if x == 'publisher':
+                                try:
+                                    publisher = y['url']
+                                except KeyError:
+                                    publisher = y
+        if text == "" and publisher == "":
+            continue
+        output = {
+                "text": text,
+                "meta": {
+                    "source": publisher
+                    }
+            }
+        output_file = open(write_file, 'a', encoding='utf-8')
+        output_file.write(json.dumps(output))
+        output_file.write("\n")
+        output_file.close()
+
 def main():
-    url_ls = get_urls('urls/urls_2.txt')
-    write_metadata(url_ls, "metadata_2.txt")
+    url_ls = get_urls('ner/urls/urls_3.txt')
+    write_metadata(url_ls, "ner/metadata/metadata_3.txt")
+    filter4Prodigy("ner/metadata/metadata_3.txt", "ner/train_data/train_data_3.jsonl")
 
 
 if __name__ == '__main__':
