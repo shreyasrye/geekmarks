@@ -68,8 +68,7 @@ def write_to_file(ls, file_name):
 
 
 def main():
-    url_extractor = UrlExtractor("""https://www.google.com/collections/s/list/SlKy8Mg9Rsua9CKAbIoM8Q/F90Pjv8sIFY?q
-    =Programming&sa=X&ved=0CAcQ4r8DKABqFwoTCJiIu5eH1u0CFQAAAAAdAAAAABAC&authuser=0""") # Google collection from which initial URLS are extracted
+    url_extractor = UrlExtractor("https://www.google.com/collections/s/list/qMTmb5xJRq-EnCOmXXjhHg/daaGT3tkSNI") # Google collection from which initial URLS are extracted
 
     source = url_extractor.dynamic_web_scrape()
     static_page_extract(source)
