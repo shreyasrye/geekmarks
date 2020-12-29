@@ -10,8 +10,34 @@ from spacy.gold import GoldParse
 from spacy.scorer import Scorer
 
 
-TRAIN_DATA = []
-TRAIN_DATA = gold2spacy("train_data/annotated_2.jsonl", TRAIN_DATA)
+
+
+def gold2spacy(prodigy_file, empty_TRAIN_DATA: list):
+    for line in open(prodigy_file, 'r'):
+        dictionary = json.loads(line)
+        text, start_char, end_char, ent = "", None, None, ""
+        ent_list = []
+        for key, value in dictionary.items():
+            if key == "text":
+                text = value
+            elif key == "spans":
+                for dc in value:
+                    for k, v in dc.items():
+                        if k == "start":
+                            start_char = v
+                        elif k == "end":
+                            end_char = v
+                        elif k == "label":
+                            ent = v
+                    ent_list.append((start_char, end_char, ent))
+            elif key == "answer" and value != "accept":
+                continue
+        spacy_formatted_line = (text, {"entities": ent_list})
+        empty_TRAIN_DATA.append(spacy_formatted_line)
+    return empty_TRAIN_DATA
+
+
+TRAIN_DATA = gold2spacy("train_data/annotated_3.jsonl", [])
 
 
 def train(model=None, output_dir=None, n_iter=100):
