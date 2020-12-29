@@ -11,7 +11,7 @@ from spacy.scorer import Scorer
 
 
 TRAIN_DATA = []
-TRAIN_DATA = gold2spacy("train_data/annotated_data_2.jsonl", TRAIN_DATA)
+TRAIN_DATA = gold2spacy("train_data/annotated_2.jsonl", TRAIN_DATA)
 
 
 def train(model=None, output_dir=None, n_iter=100):
@@ -99,7 +99,7 @@ if __name__ == '__main__':
     # train(None, "./geekmars-ner-model")
 
     # Reloading model
-    # train("./geekmarks-ner-model")
+    # train("./geekmarks-ner-model", "./geekmarks-ner-model")
     
     # Testing model
     nlp = spacy.load("./geekmarks-ner-model")
