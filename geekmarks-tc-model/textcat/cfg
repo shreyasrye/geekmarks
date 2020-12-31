@@ -1,0 +1,16 @@
+{
+  "exclusive_classes":false,
+  "labels":[
+    "RANKING",
+    "NEWS",
+    "PRODUCT/PLATFORM-INFO",
+    "COMPANY-INFO",
+    "COURSE",
+    "CONCEPT-INFO",
+    "INTRO",
+    "EVALUATION",
+    "TUTORIAL"
+  ],
+  "pretrained_vectors":null,
+  "pretrained_dims":null
+}
