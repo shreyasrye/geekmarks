@@ -2,6 +2,7 @@ from numpy.lib.function_base import _parse_input_dimensions
 import spacy
 from ner import gold2spacy
 from prettytable import PrettyTable
+from collections import defaultdict
 
 
 def nerOutput(model, TRAIN_DATA):
@@ -10,15 +11,15 @@ def nerOutput(model, TRAIN_DATA):
     table = PrettyTable(["Text", "Entities (Text, Label, Confidence)"])
     for text, _ in TRAIN_DATA:
         doc = nlp(text)
-        beams = nlp.entity.beam_parse([ doc ], beam_width = 16, beam_density = 0.0001)
+        beams = nlp.entity.beam_parse([doc], beam_width = 16, beam_density = 0.0001)
+        entity_scores = defaultdict(float)
+        for beam in beams:
+            for score, ents in nlp.entity.moves.get_beam_parses(beam):
+                for start, end, label in ents:
+                    entity_scores[(start,end, label)] += score
+        print(entity_scores)
         table.add_row([text, [(ent.text, ent.label_) for ent in doc.ents]])
     print(table)
-
-# entity_scores = defaultdict(float)
-# for beam in beams:
-#     for score, ents in nlp.entity.moves.get_beam_parses(beam):
-#         for start, end, label in ents:
-#             entity_scores[(start, label)] += score
 
 
 if __name__ == "__main__":
@@ -29,6 +30,26 @@ if __name__ == "__main__":
 """
 Example Output:
 
+defaultdict(<class 'float'>, {(0, 1, 'SUBJECT'): 1.0})
+defaultdict(<class 'float'>, {(1, 3, 'SUBJECT'): 1.0, (4, 5, 'PERSON'): 1.0, (7, 8, 'ADJECTIVE'): 1.0})
+defaultdict(<class 'float'>, {(0, 2, 'SUBJECT'): 1.0, (3, 4, 'NOUN'): 1.0, (6, 9, 'ADJECTIVE'): 1.0, (9, 10, 'NOUN'): 1.0})
+defaultdict(<class 'float'>, {(0, 1, 'NOUN'): 1.0, (2, 3, 'NOUN'): 1.0, (4, 5, 'NOUN'): 1.0, (7, 9, 'PERSON'): 1.0, (10, 13, 'ORG'): 1.0})
+defaultdict(<class 'float'>, {(1, 2, 'VERB'): 1.0, (3, 6, 'SUBJECT'): 1.0, (7, 8, 'NOUN'): 1.0})
+defaultdict(<class 'float'>, {(0, 2, 'SUBJECT'): 1.0, (3, 4, 'NOUN'): 1.0})
+defaultdict(<class 'float'>, {(1, 2, 'ADJECTIVE'): 1.0, (2, 3, 'NOUN'): 1.0, (4, 5, 'VERB'): 1.0, (6, 8, 'ADJECTIVE'): 1.0, (8, 9, 'NOUN'): 1.0})
+defaultdict(<class 'float'>, {(0, 1, 'SUBJECT'): 1.0})
+defaultdict(<class 'float'>, {(0, 2, 'SUBJECT'): 1.0})
+defaultdict(<class 'float'>, {(1, 2, 'ORG'): 1.0, (3, 4, 'VERB'): 1.0, (4, 6, 'ADJECTIVE'): 1.0, (6, 7, 'ADJECTIVE'): 1.0, (7, 8, 'NOUN'): 1.0, (9, 10, 'NOUN'): 1.0})
+defaultdict(<class 'float'>, {(0, 1, 'VERB'): 1.0, (1, 3, 'SUBJECT'): 1.0, (5, 6, 'NOUN'): 1.0, (7, 8, 'NOUN'): 1.0, (9, 12, 'ORG'): 1.0})
+defaultdict(<class 'float'>, {(0, 1, 'ADJECTIVE'): 1.0, (1, 3, 'NOUN'): 1.0, (3, 4, 'NOUN'): 1.0, (5, 6, 'VERB'): 1.0, (8, 9, 'VERB'): 1.0})
+defaultdict(<class 'float'>, {(0, 2, 'SUBJECT'): 1.0, (2, 3, 'VERB'): 1.0, (3, 6, 'VERB'): 1.0, (8, 10, 'VERB'): 1.0, (12, 15, 'NOUN'): 1.0})
+defaultdict(<class 'float'>, {(0, 2, 'SUBJECT'): 1.0, (2, 3, 'NOUN'): 1.0, (6, 7, 'VERB'): 1.0, (8, 9, 'VERB'): 1.0, (9, 10, 'NOUN'): 1.0, (11, 12, 'NOUN'): 1.0})
+defaultdict(<class 'float'>, {(1, 2, 'ADJECTIVE'): 1.0, (2, 3, 'ADJECTIVE'): 1.0, (3, 5, 'NOUN'): 1.0, (6, 9, 'SUBJECT'): 1.0})
+defaultdict(<class 'float'>, {(1, 2, 'NOUN'): 1.0, (3, 4, 'VERB'): 1.0, (4, 6, 'NOUN'): 1.0, (7, 10, 'NOUN'): 1.0, (11, 12, 'NOUN'): 1.0, (13, 16, 'ORG'): 1.0})
+defaultdict(<class 'float'>, {(1, 2, 'ADJECTIVE'): 1.0, (2, 3, 'NOUN'): 1.0, (4, 5, 'VERB'): 1.0, (5, 7, 'SUBJECT'): 1.0, (8, 11, 'ORG'): 1.0})
+defaultdict(<class 'float'>, {(0, 2, 'VERB'): 1.0, (4, 6, 'NOUN'): 1.0})
+defaultdict(<class 'float'>, {(1, 2, 'ADJECTIVE'): 1.0, (3, 4, 'ADJECTIVE'): 1.0, (4, 5, 'NOUN'): 1.0, (6, 8, 'NOUN'): 1.0})
+defaultdict(<class 'float'>, {(0, 1, 'VERB'): 1.0, (2, 4, 'NOUN'): 1.0, (4, 6, 'NOUN'): 1.0})
 +-------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                               Text                                              |                                                            Entities (Text, Label, Confidence Score)                                                           |
 +-------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
