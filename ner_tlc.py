@@ -1,8 +1,24 @@
 from numpy.lib.function_base import _parse_input_dimensions
 import spacy
+from spacy.util import minibatch, compounding
 from ner import gold2spacy
 from prettytable import PrettyTable
 from collections import defaultdict
+# import numpy
+
+
+# def softmax(x):
+#     """Compute softmax values for each sets of scores in x."""
+#     return np.exp(x) / np.sum(np.exp(x), axis=0) 
+
+# scores = numpy.zeros((len(doc), nlp.entity.model.nr_class))
+#         with nlp.entity.step_through(doc) as state:
+#             while not state.is_final:
+#                 action = state.predict()
+#                 next_tokens = state.queue
+#                 scores[next_tokens[0].i] = state.scores
+#                 state.transition(action)
+#         print(softmax(scores))
 
 
 def nerOutput(model, TRAIN_DATA):
@@ -11,13 +27,24 @@ def nerOutput(model, TRAIN_DATA):
     table = PrettyTable(["Text", "Entities (Text, Label, Confidence)"])
     for text, _ in TRAIN_DATA:
         doc = nlp(text)
-        beams = nlp.entity.beam_parse([doc], beam_width = 16, beam_density = 0.0001)
-        entity_scores = defaultdict(float)
-        for beam in beams:
-            for score, ents in nlp.entity.moves.get_beam_parses(beam):
-                for start, end, label in ents:
-                    entity_scores[(start,end, label)] += score
-        print(entity_scores)
+        ner = nlp.get_pipe('ner')
+        batches = minibatch(TRAIN_DATA, size=compounding(4.0, 32.0, 1.001))
+        for batch in batches:
+            for text in batch:
+                print(text)
+            docs = [nlp.make_doc(text) for text[0] in batch]
+            beams = ner.beam_parse(docs, beam_width=16)
+            for beam in beams:
+                entities = ner.moves.get_beam_annot(beam)
+                print(entities)
+        
+        # beams = nlp.entity.beam_parse([doc], beam_width = 16, beam_density = 0.0001)
+        # entity_scores = defaultdict(float)
+        # for beam in beams:
+        #     for score, ents in nlp.entity.moves.get_beam_parses(beam):
+        #         for start, end, label in ents:
+        #             entity_scores[(start,end, label)] += score
+        # print(entity_scores)
         table.add_row([text, [(ent.text, ent.label_) for ent in doc.ents]])
     print(table)
 
