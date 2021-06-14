@@ -35,7 +35,7 @@ def gold2spacy(prodigy_file, empty_TRAIN_DATA: list):
 
 
 TRAIN_DATA = gold2spacy("ner/annotations/annotated_2.jsonl", [])
-TEST_DATA = gold2spacy("evaluation/evaluations_2.jsonl", [])
+TEST_DATA = gold2spacy("ner/evaluation/evaluations_2.jsonl", [])
 
 
 def train(model=None, output_dir=None, n_iter=100):
