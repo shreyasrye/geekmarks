@@ -12,6 +12,11 @@ A simple run-through of how to use this repository.
 [spaCy]: https://spacy.io/usage
 [Prodigy]: https://prodi.gy/docs/
 
+## Virtual Environment
+You can run this script to setup a virtual environment
+
+`$ pip install virtualenv`
+
 ## Dependencies
 
 - Install spacy: For more information on how to install, check the [spaCy Github page](https://github.com/explosion/spaCy)
