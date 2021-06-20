@@ -1,12 +1,10 @@
 class Vertex:
+    
     def __init__(self, node):
-        self.id = node
-        self.adjacent = {}
+        self.id = node # tuple containing data and its strength ie. popularity / influence
+        self.adjacents = {} # Dictionary with keys being weights and values being the data
 
-    def __str__(self):
-        return str(self.id) + ' adjacent: ' + str([x.id for x in self.adjacent])
-
-    def add_neighbor(self, neighbor, weight=0):
+    def add_neighbor(self, neighbor, weight=0, strength):
         self.adjacent[neighbor] = weight
 
     def get_connections(self):
@@ -16,6 +14,9 @@ class Vertex:
         return self.id
 
     def get_weight(self, neighbor):
+        return self.adjacent[neighbor]
+        
+    def get_strength(node):
         return self.adjacent[neighbor]
 
 class Graph:
@@ -45,7 +46,7 @@ class Graph:
             self.add_vertex(to)
 
         self.vert_dict[frm].add_neighbor(self.vert_dict[to], cost)
-        self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost)
+        self.vert_dict[to].add_neighbor(self.vert_dict[frm], cost) q    
 
     def get_vertices(self):
         return self.vert_dict.keys()
