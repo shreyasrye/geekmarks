@@ -3,3 +3,4 @@ spacy=3.0
 numpy=1.20.3
 beautifulsoup4=4.9.3
 selenium=3.141.0
+extruct=0.12.0

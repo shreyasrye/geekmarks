@@ -12,5 +12,6 @@ esac
 
 pip install -r requirements.txt
 python url_extractor.py
+python metadata.py
 
 deactivate

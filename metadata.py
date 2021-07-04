@@ -50,7 +50,7 @@ def get_metadata(html: bytes, url: str):
 
 
 def write_metadata(url_ls, output_file):
-    with open(output_file, "w") as file:
+    with open(output_file, "a") as file:
         for url in url_ls:
             meta_json = json.dumps(scrape(url))
             if meta_json == '[]':
@@ -97,9 +97,9 @@ def filter4Prodigy(read_file, write_file):
         output_file.close()
 
 def main():
-    url_ls = get_urls('ner/urls/urls_3.txt')
-    write_metadata(url_ls, "ner/metadata/metadata_3.txt")
-    filter4Prodigy("ner/metadata/metadata_3.txt", "ner/train_data/train_data_3.jsonl")
+    url_ls = get_urls('ner/urls.txt')
+    write_metadata(url_ls, "ner/metadata.txt")
+    filter4Prodigy("ner/metadata.txt", "ner/train_data.jsonl")
 
 
 if __name__ == '__main__':

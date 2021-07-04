@@ -2,6 +2,11 @@ from bs4 import BeautifulSoup, SoupStrainer
 from selenium import webdriver
 import time
 from config import cfd
+from glob import glob    
+
+DIR = 'some/where/'
+existing_files = glob(DIR + '*.xls')
+filename = DIR + 'stuff--%d--stuff.xls' % (len(existing_files) + 1)
 
 
 def driver(browser):
@@ -61,7 +66,7 @@ def static_page_extract(html_source):
 
 def write_to_file(ls, file_name):
     """ Write the extracted text into a file for annotating"""
-    file = open(file_name, "w")
+    file = open(file_name, "a")
     for i in range(len(ls)):
         file.write(ls[i] + '\n')
     file.close()
@@ -73,7 +78,7 @@ def main():
     source = url_extractor.dynamic_web_scrape()
     static_page_extract(source)
     url_ls = static_page_extract(source)
-    write_to_file(url_ls, "urls_2.txt")
+    write_to_file(url_ls, "ner/urls.txt")
 
 
 if __name__ == '__main__':
