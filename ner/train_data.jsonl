@@ -152,3 +152,128 @@
 {"text": "We Want Fair AI Algorithms \u2013 But How To Define Fairness? (Fairness Series Part 3)", "meta": {"source": {"@id": "https://mostly.ai/#organization"}}}
 {"text": "When algorithmic fairness fixes fail: The case for keeping humans in the loop", "meta": {"source": {"@type": "Organization", "name": "Tech Xplore", "logo": {"@type": "ImageObject", "url": "https://techx.b-cdn.net/pic/techx.amp.png", "width": 280, "height": 60}}}}
 {"text": "Maximizing BERT model performance - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "The Detailed Guide to Master Method to Find the Time Complexity of Any Recursive Algorithm", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Complexity Theory 101: Introduction to Big O - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "How to Create a Simple Chess App With React - Level Up Coding", "meta": {"source": "levelup.gitconnected.com"}}
+{"text": "Lightning-fast Python for 100x faster performance from Saturn Cloud, now available on Snowflake", "meta": {"source": "https://www.zdnet.com/"}}
+{"text": "Vercel picks up $40 million to advance React framework", "meta": {"source": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://vbstatic.co/brand/img/logos/VB_Extended_Logo_60H.png", "width": 416, "height": 60}, "name": "VentureBeat"}}}
+{"text": "JavaScript Promise Tutorial \u2013 How to Resolve or Reject Promises in JS", "meta": {"source": "https://www.freecodecamp.org/news/"}}
+{"text": "An explainable topological search engine with Giotto-tda", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Cheerio: A Simple Tool to Create Your Web Scraping Bot", "meta": {"source": {"@id": "https://analyticsindiamag.com/#organization"}}}
+{"text": "Top 13 Youtube Channels to Learn Python - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "A Journey From React to Vue.js - Better Programming - Medium", "meta": {"source": "https://medium.com/better-programming"}}
+{"text": "Bitwise Operators in Python", "meta": {"source": {"@type": "Organization", "name": "Real Python", "logo": {"@type": "ImageObject", "url": "https://realpython.com/static/real-python-logo-square-tiny.b2452b6d3823.png", "width": 60, "height": 60}}}}
+{"text": "The Simplest Tutorial for Python Decorators - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Scrape Beautifully With Beautiful Soup In Python", "meta": {"source": {"@id": "https://analyticsindiamag.com/#organization"}}}
+{"text": "Python: 6 coding hygiene tips that helped me get promoted.", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Handling SQL Databases With PyQt: The Basics", "meta": {"source": {"@type": "Organization", "name": "Real Python", "logo": {"@type": "ImageObject", "url": "https://realpython.com/static/real-python-logo-square-tiny.b2452b6d3823.png", "width": 60, "height": 60}}}}
+{"text": "Changing Lanes: How Lyft is Migrating 100+ Frontend Microservices to Next.js", "meta": {"source": "eng.lyft.com"}}
+{"text": "Display Rich Text In The Console Using Python - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Building Simulations in Python \u2014 A Step by Step Walkthrough", "meta": {"source": "towardsdatascience.com"}}
+{"text": "React + Firebase + Stripe = Fireact, the open-source project for your next SaaS product.", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "Learn to Write Functions Others Can Use in\u00a0Python | Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "", "meta": {"source": "Adafruit"}}
+{"text": "4 Python Concepts That Beginners May Be Confused About", "meta": {"source": "https://medium.com/better-programming"}}
+{"text": "How Dropbox Created a Distributed Async Task Framework at Scale", "meta": {"source": {"@type": "Organization", "name": "InfoQ", "logo": {"@type": "ImageObject", "url": "http://assets.infoq.com/resources/en/infoQ-logo-big.jpg"}}}}
+{"text": "Next.JS 10 Brings Automatic Image Optimization,  Internationalized Routing, and Web Vitals Analytics", "meta": {"source": {"@type": "Organization", "name": "InfoQ", "logo": {"@type": "ImageObject", "url": "http://assets.infoq.com/resources/en/infoQ-logo-big.jpg"}}}}
+{"text": "Python, Pandas & XlsxWriter | by Dean McGrath | Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "A Tutorial on Scraping Images from the Web Using BeautifulSoup", "meta": {"source": "towardsdatascience.com"}}
+{"text": "I built a Next.js job board with Next. Find your Next JS dream job!", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "Tech companies are lining up to go public \u2014 here's what we learned from the most recent wave of IPO filings", "meta": {"source": "https://www.cnbc.com/"}}
+{"text": "React Colorful: A Minimalist and Fast Alternative to React Color", "meta": {"source": "blog.bitsrc.io"}}
+{"text": "Python enumerate(): Simplify Looping With Counters", "meta": {"source": {"@type": "Organization", "name": "Real Python", "logo": {"@type": "ImageObject", "url": "https://realpython.com/static/real-python-logo-square-tiny.b2452b6d3823.png", "width": 60, "height": 60}}}}
+{"text": "10 Examples to Master *args and **kwargs in Python - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "The Few, the Tired, the Open Source Coders", "meta": {"source": "https://www.wired.com"}}
+{"text": "Standing up for developers: youtube-dl is back", "meta": {"source": ""}}
+{"text": "3 Simple Tricks to Better Structure Your SQL Queries", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Web Workers to improve UI performance - THRON tech blog - Medium", "meta": {"source": "https://medium.com/thron-tech"}}
+{"text": "Moving OkCupid from REST to GraphQL", "meta": {"source": "https://tech.okcupid.com/"}}
+{"text": "A Spreadsheet Importer You&#8217;ll Enjoy Using", "meta": {"source": {"@id": "https://css-tricks.com/#organization"}}}
+{"text": "How to create stunning visualizations using python from scratch", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Top JavaScript Frameworks and Web Development Trends in 2021", "meta": {"source": "codeburst.io"}}
+{"text": "The Four Pillars of Object-Oriented Programming", "meta": {"source": "https://www.freecodecamp.org/news/"}}
+{"text": "How to Use the Locomotive Scroll for all Kinds of Scrolling Effects", "meta": {"source": {"@id": "https://css-tricks.com/#organization"}}}
+{"text": "How fast is C++ compared to Python? - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Web Scraping with a Headless Browser: A Puppeteer Tutorial", "meta": {"source": {"@id": "https://blog.datahut.co/#organization"}}}
+{"text": "Kubernetes vs. Docker: A Primer", "meta": {"source": {"@id": "https://containerjournal.com/#organization"}}}
+{"text": "Netlify &#038; Next.js", "meta": {"source": {"@id": "https://css-tricks.com/#organization"}}}
+{"text": "NoSQL Is Dead, Long Live NoSQL", "meta": {"source": "https://dzone.com"}}
+{"text": "3 Useful Projects to learn Python Classes - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "A Deep Dive Into Web Scraping Using MechanicalSoup", "meta": {"source": {"@id": "https://analyticsindiamag.com/#organization"}}}
+{"text": "Why Google's Dart and Flutter are so popular for app design - Business Insider", "meta": {"source": "www.businessinsider.com"}}
+{"text": "Introduction to REST APIs - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Turn Windows into a usable development environment with WSL", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "How to Set up Python3 the Right Easy Way! - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Conditional Selection and Assignment With .loc in Pandas", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Top 10 Python GUI Frameworks for Developers - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "How to Easily Implement User Authentication in React With Easybase", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "Inheritance vs Composition: Which is Better for Your JavaScript Project?", "meta": {"source": "blog.bitsrc.io"}}
+{"text": "Github Releases Catalyst to Ease the Development of Web Components in Complex Applications", "meta": {"source": {"@type": "Organization", "name": "InfoQ", "logo": {"@type": "ImageObject", "url": "http://assets.infoq.com/resources/en/infoQ-logo-big.jpg"}}}}
+{"text": "Aspect-Oriented Programming in JavaScript - Bits and Pieces", "meta": {"source": "blog.bitsrc.io"}}
+{"text": "Next.js Commerce: Get Your Store Up And Running", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "A gentle introduction to the mathematics behind A/B testing", "meta": {"source": "towardsdatascience.com"}}
+{"text": "A Collection of Advanced Visualization in Matplotlib and Seaborn with Examples", "meta": {"source": "towardsdatascience.com"}}
+{"text": "AWS Announces New Service: Amazon S3 Storage Lens", "meta": {"source": {"@type": "Organization", "name": "InfoQ", "logo": {"@type": "ImageObject", "url": "http://assets.infoq.com/resources/en/infoQ-logo-big.jpg"}}}}
+{"text": "I Created a Responsive Portfolio Website Using HTML, CSS, Bootstrap, and JavaScript-Updated", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "React Native Libraries for \u201cNative Features\u201d - Bits and Pieces", "meta": {"source": "blog.bitsrc.io"}}
+{"text": "AI and the transformation of the medical world", "meta": {"source": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://vbstatic.co/brand/img/logos/VB_Extended_Logo_60H.png", "width": 416, "height": 60}, "name": "VentureBeat"}}}
+{"text": "Block-based what? Differentiating programming languages, environments, and editors", "meta": {"source": "https://medium.com/bits-and-behavior"}}
+{"text": "Boom times have returned for venture-backed start-ups, says co-founder of $3 billion fintech Brex", "meta": {"source": "https://www.cnbc.com/"}}
+{"text": "The Next Level of Functional Programming in Python - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "How I built a real world project for the first time \ud83c\udf08", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "Top 11 Github Repositories to Learn Python - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "How I built a social network in 4 weeks with GraphQL and serverless", "meta": {"source": {"@id": "https://theburningmonk.com/#/schema/person/6b58679b4aa29db4f537a76fd0923ad4"}}}
+{"text": "Domain-Driven Design in Nuxt Apps", "meta": {"source": {"@id": "https://vueschool.io/articles/#organization"}}}
+{"text": "Programmatically navigate with React Router v5 - ui.dev", "meta": {"source": "https://ui.dev"}}
+{"text": "Run Python Code on Websites: Exploring Brython - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Understand O.O.P. in Python with One Article - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "A first introduction to building 3D applications with JavaScript or TypeScript using Babylon.js", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "Python programming language creator Guido van Rossum joins Microsoft", "meta": {"source": {"@type": "Organization", "name": "TechRepublic", "logo": {"@type": "ImageObject", "url": "https://tr3.cbsistatic.com/fly/bundles/techrepubliccss/images/logo-tr-512x512.png", "height": 512, "width": 512}}}}
+{"text": "Vue tricks: smart layouts for VueJS - ITNEXT", "meta": {"source": "itnext.io"}}
+{"text": "Supercharge your Python String with TextBlob - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Quick LocalStorage Usage in Vue", "meta": {"source": {"@id": "https://css-tricks.com/#organization"}}}
+{"text": "5 Reasons to Use TypeScript with React - Bits and Pieces", "meta": {"source": "blog.bitsrc.io"}}
+{"text": "Train Your Mind to Think Recursively in 5 Steps - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Using Python one-liners may not always be a good idea | Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "What is no-code AI and why should you care?", "meta": {"source": "https://www.techradar.com/pro"}}
+{"text": "Learn D3: Interaction", "meta": {"source": {"@type": "Organization", "name": "Observable", "logo": {"@type": "ImageObject", "url": "https://static.observablehq.com/favicon-512.0667824687f99c942a02e06e2db1a060911da0bf3606671676a255b1cf97b4fe.png"}}}}
+{"text": "The power of visualizing as a tool for creativity - Bootcamp - Medium", "meta": {"source": "https://medium.com/design-bootcamp"}}
+{"text": "How to Create a Discord Bot for Free with Python \u2013 Full Tutorial", "meta": {"source": "https://www.freecodecamp.org/news/"}}
+{"text": "Scheduling All Kinds of Recurring Jobs with Python - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Programming language security: These are the worst bugs for each top language", "meta": {"source": "https://www.zdnet.com/"}}
+{"text": "Robust NodeJS Deployment Architecture", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "How To Scrape Websites Using Puppeteer &#038; Node.js", "meta": {"source": {"@id": "https://analyticsindiamag.com/#organization"}}}
+{"text": "Json Web Tokens: A few Gotchas - codeburst", "meta": {"source": "codeburst.io"}}
+{"text": "Microsoft Open-Sources Fluid Framework for Distributed, Scalable, Real-Time Collaborative Web Apps", "meta": {"source": {"@type": "Organization", "name": "InfoQ", "logo": {"@type": "ImageObject", "url": "http://assets.infoq.com/resources/en/infoQ-logo-big.jpg"}}}}
+{"text": "How to Build a Snake Game In JavaScript", "meta": {"source": "https://www.freecodecamp.org/news/"}}
+{"text": "How to Make Stunning Interactive Maps with Python and Folium in Minutes", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Let\u2019s Create: Portfolio App With Next.js, Strapi Headless CMS and Bootstrap 5", "meta": {"source": "https://medium.com/swlh"}}
+{"text": "Web scraping is a tool, not a crime", "meta": {"source": {"@type": "Organization", "name": "MIT Technology Review", "logo": {"@type": "ImageObject", "url": "https://wp.technologyreview.com/wp-content/themes/mittr/client/src/images/logo.png", "width": 203, "height": 100}}}}
+{"text": "Airbnb Releases Visx, a Set of Low-Level Primitives for Interactive Visualizations with React", "meta": {"source": {"@type": "Organization", "name": "InfoQ", "logo": {"@type": "ImageObject", "url": "http://assets.infoq.com/resources/en/infoQ-logo-big.jpg"}}}}
+{"text": "HarperDB vs MongoDB vs PostgreSQL", "meta": {"source": "https://dzone.com"}}
+{"text": "Build a Notes App With Google Authentication in Node.js", "meta": {"source": "https://medium.com/better-programming"}}
+{"text": "Dynamic Programming for Beginners \u2013 How to Solve Coding Challenges with Memoization and Tabulation", "meta": {"source": "https://www.freecodecamp.org/news/"}}
+{"text": "My favorite place to look for icons", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "A guide to Geolocation API ", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "Basic Linear Programming in Python with PuLP - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Frontend Performance Optimization", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "Enhanced Git Flow Explained", "meta": {"source": {"@type": "Organization", "name": "Toptal", "logo": {"@type": "ImageObject", "width": 32, "height": 32, "url": "https://bs-assets.toptal.io/blackfish-assets/public/base/images/favicons/toptal-blog-favicon32x32_c2c2ba.png"}}}}
+{"text": "Deep Dive into Page Lifecycle API - Bits and Pieces", "meta": {"source": "blog.bitsrc.io"}}
+{"text": "Most useful Python functions for Time Series Analysis", "meta": {"source": "towardsdatascience.com"}}
+{"text": "A Very Easy Tutorial to Learn Python Regular Expression (regex)", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Creating UI Components in SVG", "meta": {"source": {"@id": "https://css-tricks.com/#organization"}}}
+{"text": "How to useRef to Fix React Performance Issues | Better Programming", "meta": {"source": "https://medium.com/better-programming"}}
+{"text": "Build Simple Timeline in React", "meta": {"source": {"@context": "http://schema.org", "@type": "Organization", "name": "DEV Community", "logo": {"@context": "http://schema.org", "@type": "ImageObject", "url": "https://res.cloudinary.com/practicaldev/image/fetch/s--t7tVouP9--/c_limit,f_png,fl_progressive,q_80,w_192/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png", "width": "192", "height": "192"}}}}
+{"text": "5 Uses of Lambda Functions in Python - TechToFreedom - Medium", "meta": {"source": "https://medium.com/techtofreedom"}}
+{"text": "Build a Flask microservice with OpenFaaS", "meta": {"source": {"@type": "Organization", "logo": {"@type": "ImageObject", "url": "https://www.openfaas.com/siteicon.png"}, "name": "OpenFaaS Ltd"}}}
+{"text": "A neural network learns when it should not be trusted", "meta": {"source": {"@type": "Organization", "name": "Tech Xplore", "logo": {"@type": "ImageObject", "url": "https://techx.b-cdn.net/pic/techx.amp.png", "width": 280, "height": 60}}}}
+{"text": "An AI helps you summarize the latest in AI", "meta": {"source": {"@type": "Organization", "name": "MIT Technology Review", "logo": {"@type": "ImageObject", "url": "https://wp.technologyreview.com/wp-content/themes/mittr/client/src/images/logo.png", "width": 203, "height": 100}}}}
+{"text": "10 Python Skills They Don\u2019t Teach in Bootcamp | Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Why some VCs prefer to work with first-time founders", "meta": {"source": {"@type": "Organization", "name": "TechCrunch", "logo": {"@type": "imageObject", "url": "https://techcrunch.com/wp-content/themes/techcrunch-2017/images/logo-json-ld.png", "width": "600", "height": "60"}}}}
+{"text": "Building Modern Native Add-ons for Node.js in 2020 - Node.js - Medium", "meta": {"source": "https://nodejs.medium.com/"}}
+{"text": "Dictionary Comprehensions in Python - Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "Libraries for SVG Drawing Animations", "meta": {"source": {"@id": "https://css-tricks.com/#organization"}}}
+{"text": "LinkedIn API + Python = Programmatically Publishing  | by Alessandro Berti | Towards Data Science", "meta": {"source": "towardsdatascience.com"}}
+{"text": "As Venture Debt Becomes The New Norm, Startups Caught In Debt Funding Dilemma", "meta": {"source": {"@id": "https://inc42.com/#organization"}}}
+{"text": "How to Create a Commenting Engine with Next.js and Sanity", "meta": {"source": {"@id": "https://css-tricks.com/#organization"}}}
+{"text": "Full-text search since PostgreSQL 8.3", "meta": {"source": {"@id": "https://www.2ndquadrant.com/en/#organization"}}}
